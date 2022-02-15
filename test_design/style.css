@@ -1,0 +1,274 @@
+body{
+    padding: 100px 0 0 120px;
+}
+.title{
+    font-family: 'Marvel';
+    font-size: 18px;
+    line-height: 36px;
+    color: #333;
+}
+.title .marker{
+    font-family: 'Hipstelvetica';
+    font-size: 12px;
+    line-height: 24px;
+    color: #ff3333;
+}
+
+.controls{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-column-gap:70px;
+    grid-template-rows: auto 40px auto 30px auto;
+    grid-template-areas: 
+    "linkList checkList"
+    ". ."
+    "selectArea textArea"
+    ". ."
+    ". buttonArea"; 
+}
+
+.block1{
+    grid-area: linkList;
+}
+.block2{
+    grid-area:checkList;
+}
+.block3{
+    grid-area:selectArea;
+}
+.block4{
+    grid-area:textArea;
+}
+.block5{
+    width: 100%;
+    grid-area:buttonArea;
+}
+/* Block 1.Links List */
+.links__link:link{
+    font-family: 'Marvel';
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #333333;
+    transition: 0.3s;
+    border-bottom:1px solid #e1e1e1;
+}
+.links__link:visited{
+    color: #666666;
+    border-bottom:1px solid #e1e1e1;
+}
+.links__link:hover{
+    background:#e1e1e1;
+    transition: 0.3s;
+}
+.links__link:hover, .links__link:active{
+    color: #000000;
+    border-bottom:0px;
+}
+
+/* Block 2.Check List/Radio List */
+.block2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.check-list, .radio-list{
+    width: 130px;
+}
+
+.block2 .check-list__label, .block2 .radio-list__label{
+    font-family: 'Marvel';
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    color: #000000;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+}
+
+.check-list__input, .radio-list__input{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance: none;
+}
+
+.check-list__label .mark{
+    width: 20px;
+    height: 20px;
+    background: #22f8b9;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio-list__label .mark{
+    width: 20px;
+    height: 20px;
+    background: #22f8b9;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio-list__label .mark::before{
+    content: " ";
+    width: 8px;
+    height: 8px;
+    background-color: #0000ff;
+    border-radius: 50%;
+    opacity: 0;
+}
+.check-list__label .mark__tick{
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 12px;
+    width: 7px;
+    margin-bottom: 2px;
+    border-bottom: 3px solid #0000ff;
+    border-right: 3px solid #0000ff;
+    opacity: 0;
+}
+.check-list__input:disabled + .mark, .radio-list__input:disabled + .mark{
+    background-color: #eaeaea;
+}
+.check-list__input:checked +.mark>.mark__tick{
+    opacity: 1;
+}
+.radio-list__input:checked +.mark::before{
+    opacity: 1;
+}
+
+/* Block 3. Dropdown List */
+.block3{
+    height: 50px;
+}
+.dropdown{
+    width: 100%;
+    position: relative;
+}
+.dropdown .dropdown__btn{
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 0;
+    top:12px;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.3s;
+    pointer-events: none;
+}
+.dropdown.active .dropdown__btn{
+    transform: rotate(-45deg);
+    transition: 0.3s;
+}
+.dropdown__btn::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+     width: 12px;
+    transform: translate(-50%,-50%);
+    border-top: 2px solid #252525;
+}
+.dropdown__btn::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 12px;
+    transform: translate(-50%,-50%);
+    border-left: 2px solid #252525;
+}
+
+.dropdown__input{
+    width: 100%;
+    border-bottom: 2px solid #363636;
+    padding: 0 30px 0 0;
+    font-family: 'Marvel';
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #333333;
+    cursor: pointer;
+    position: absolute;
+    transition: 0.2s;
+}
+
+.dropdown__input::placeholder{
+    color: #999999;
+    opacity: 1;
+}
+.dropdown.active .dropdown__input::placeholder{
+    color: #333333;
+}
+.dropdown .option{
+    position: absolute;
+    top: 36px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+.dropdown.active .option{
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+    margin-top: 2px;
+    background: #fff;
+    transition: 0.2s;
+}
+.option__item{
+    font-family: 'Marvel';
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #999999;
+    border-bottom:2px solid #d7d7d7;
+    width: 300px;
+    margin: 12px 0 0 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option__item:hover{
+    color:#ff3333;
+    border-bottom:2px solid #ff3333;
+    transition: 0.2s;
+}
+
+/* Block 4. Input Text/ Buttons */
+.text-box__input{
+    width: 100%;
+    font-family: 'Marvel';
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #333333;
+    border-bottom: 2px solid #363636;
+}
+.text-box__input::placeholder{
+    color: #999999;
+}
+.send{
+    font-family: 'Marvel';
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #0000ff;
+    width: 130px;
+    height: 60px;
+    border: 2px solid #0000ff;
+    background: #fff;
+    transition: 0.3s;
+}
+.send:hover{
+    background: #0000ff;
+    color: #fff;
+    transition: 0.3s;
+}

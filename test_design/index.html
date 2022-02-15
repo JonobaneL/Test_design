@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="zero.css">
+    <link rel="stylesheet" href="responsive_styles.css">
+    <link rel="stylesheet" href="./fonts/stylesheet.css">
+    <title>Test Design</title>
+</head>
+<body>
+    <p class="title"><span class="marker">h6: </span>Links and form elements</p>
+    <div class="controls">
+        <div class="block1">
+            <ul class="links">
+                <li class="links__item"><a href="#default-link" class="links__link">Default link</a></li>
+                <li class="links__item"><a href="#hoverd-link" class="links__link">Hoverd link</a></li>
+                <li class="links__item"><a href="#active-link" class="links__link">Active link</a></li>
+                <li class="links__item"><a href="#visited-link" class="links__link">Visited link</a></li>
+            </ul>
+        </div>
+        <div class="block2">
+            <div class="check-list">
+                <label class="check-list__label">
+                    <input type="checkbox" name="default" class="check-list__input" >
+                    <div class="mark">
+                        <div class="mark__tick"></div>
+                    </div>
+                    Default
+                </label>
+                <label class="check-list__label">
+                    <input type="checkbox" name="checked" class="check-list__input" checked="checked">
+                    <div class="mark">
+                        <div class="mark__tick"></div>
+                    </div>
+                    Checked
+                </label>
+                <label class="check-list__label">
+                    <input type="checkbox" name="disabled" class="check-list__input" disabled>
+                    <div class="mark">
+                        <div class="mark__tick"></div>
+                    </div>
+                    Disabled
+                </label>
+            </div>
+            <div class="radio-list">
+                <label class="radio-list__label">
+                    <input type="radio" name="radio" class="radio-list__input" >
+                    <div class="mark"></div>
+                    Default
+                </label>
+                <label class="radio-list__label">
+                    <input type="radio" name="radio" class="radio-list__input" checked="checked">
+                    <div class="mark">
+                    </div>
+                    Checked
+                </label>
+                <label class="radio-list__label">
+                    <input type="radio" name="radio" class="radio-list__input" disabled>
+                    <div class="mark">
+                    </div>
+                    Disabled
+                </label>
+            </div>
+        </div>
+        <div class="block3">
+            <div class="dropdown">
+                <div class="dropdown__btn"></div>
+                <input type="text" class="dropdown__input" placeholder="No selected element" readonly>
+                <div class="option">
+                    <div class="option__item">First item</div>
+                    <div class="option__item">Second item</div>
+                    <div class="option__item">Hovered item</div>
+                </div>
+            </div>
+        </div>
+        <div class="block4">
+            <div class="text-box">
+                <input type="text" name="text" class="text-box__input" placeholder="Input">
+            </div>
+            
+        </div>
+        <div class="block5">
+            <button class="send">Send</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
